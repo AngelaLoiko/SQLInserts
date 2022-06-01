@@ -1,49 +1,49 @@
-CREATE TABLE IF NOT EXISTS genre(
+CREATE TABLE IF NOT EXISTS public.genre(
 	id_genre SERIAL PRIMARY KEY,
 	name_genre VARCHAR(150) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS singer (
+CREATE TABLE IF NOT EXISTS public.singer (
 	id_singer SERIAL PRIMARY KEY,
 	name_singer VARCHAR(50) NULL,
 	surname VARCHAR(50) NULL,
 	alias VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS album (
+CREATE TABLE IF NOT EXISTS public.album (
 	id_album SERIAL PRIMARY KEY,
 	name_album VARCHAR(150) NOT NULL,
 	year_album INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS collect (
+CREATE TABLE IF NOT EXISTS public.collect (
 	id_collect SERIAL PRIMARY KEY,
 	name_collect VARCHAR(150) NOT NULL,
 	year_collect INTEGER
 );
 
 
-CREATE TABLE IF NOT EXISTS track(
+CREATE TABLE IF NOT EXISTS public.track(
 	id_track SERIAL PRIMARY KEY,
 	name_track VARCHAR(150),
 	duration INTEGER, --количество секунд
 	id_album INTEGER REFERENCES album (id_album)
 );
 
-CREATE TABLE IF NOT EXISTS track_collect(
+CREATE TABLE IF NOT EXISTS public.track_collect(
 	id_track_collect SERIAL PRIMARY KEY,
 	id_track INTEGER REFERENCES track (id_track),
 	id_collect INTEGER REFERENCES collect (id_collect)
 );
 
 
-CREATE TABLE IF NOT EXISTS singer_album(
+CREATE TABLE IF NOT EXISTS public.singer_album(
 	id_singer_album SERIAL PRIMARY KEY,
 	id_singer INTEGER REFERENCES singer (id_singer),
 	id_album INTEGER REFERENCES album (id_album)
 );
 
-CREATE TABLE IF NOT EXISTS singer_genre(
+CREATE TABLE IF NOT EXISTS public.singer_genre(
 	id_singer_genre SERIAL PRIMARY KEY,
 	id_singer INTEGER REFERENCES singer (id_singer),
 	id_genre INTEGER REFERENCES genre (id_genre)
@@ -145,7 +145,7 @@ INSERT INTO public.track_collect (id_track, id_collect) VALUES(5, 5);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(6, 6);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(7, 7);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(8, 8);
-INSERT INTO public.track_collect (id_track, id_collect) VALUES(9, 9);
+INSERT INTO public.track_collect (id_track, id_collect) VALUES(9, 8);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(10, 1);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(11, 2);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(12, 3);
@@ -154,7 +154,7 @@ INSERT INTO public.track_collect (id_track, id_collect) VALUES(14, 5);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(15, 6);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(16, 7);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(17, 8);
-INSERT INTO public.track_collect (id_track, id_collect) VALUES(18, 9);
+INSERT INTO public.track_collect (id_track, id_collect) VALUES(18, 5);
 
 
 --исполнители в жанрах
@@ -195,13 +195,13 @@ SELECT name_album, year_album FROM public.album WHERE year_album = 2018;
 SELECT name_track, duration FROM public.track WHERE duration in (select max(duration) from public.track);
 
 --название треков, продолжительность которых не менее 3,5 минуты
-SELECT name_track, duration FROM public.track  WHERE duration >= 210 -- 3,5 минуты = 210 секунд
+SELECT name_track, duration FROM public.track  WHERE duration >= 210; -- 3,5 минуты = 210 секунд
 
 --названия сборников, вышедших в период с 2018 по 2020 год включительно
 SELECT  name_collect, year_collect FROM public.collect  WHERE year_collect BETWEEN 2018 AND 2020;
 
 --исполнители, чье имя состоит из 1 слова
-SELECT id_singer, name_singer, surname, alias FROM public.singer where alias not like '% %'
+SELECT id_singer, name_singer, surname, alias FROM public.singer where alias not like '% %';
 
 --название треков, которые содержат слово "мой"/"my".
-SELECT id_track, name_track, duration, id_album FROM public.track  where upper(name_track) like '%MY%' or upper(name_track) like '%МОЙ%'
+SELECT id_track, name_track, duration, id_album FROM public.track  where upper(name_track) like '%MY%' or upper(name_track) like '%МОЙ%';

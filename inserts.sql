@@ -94,7 +94,7 @@ INSERT INTO public.track_collect (id_track, id_collect) VALUES(5, 5);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(6, 6);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(7, 7);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(8, 8);
-INSERT INTO public.track_collect (id_track, id_collect) VALUES(9, 9);
+INSERT INTO public.track_collect (id_track, id_collect) VALUES(9, 8);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(10, 1);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(11, 2);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(12, 3);
@@ -103,7 +103,7 @@ INSERT INTO public.track_collect (id_track, id_collect) VALUES(14, 5);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(15, 6);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(16, 7);
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(17, 8);
-INSERT INTO public.track_collect (id_track, id_collect) VALUES(18, 9);
+INSERT INTO public.track_collect (id_track, id_collect) VALUES(18, 5);
 
 
 --исполнители в жанрах
