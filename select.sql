@@ -1,4 +1,4 @@
-
+-- selects для первого задания
 --название и год выхода альбомов, вышедших в 2018 году;
 --select * from FROM public.album where year_album = 2018; 
 SELECT name_album, year_album FROM public.album WHERE year_album = 2018;
