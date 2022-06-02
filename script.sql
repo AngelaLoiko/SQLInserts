@@ -1,3 +1,4 @@
+-- отдельный скрипт для создания таблиц
 CREATE TABLE IF NOT EXISTS genre(
 	id_genre SERIAL PRIMARY KEY,
 	name_genre VARCHAR(150) NOT NULL
