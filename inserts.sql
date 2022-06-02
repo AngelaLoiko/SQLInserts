@@ -42,7 +42,7 @@ INSERT INTO public.album (name_album, year_album) VALUES('Cheek to Cheek', 2011)
 INSERT INTO public.album (name_album, year_album) VALUES('Yellow Submarine', 1969);
 
 --Muse рок
-INSERT INTO public.album (name_album, year_album) VALUES('Live at Rome Olympic Stadium', 2013);
+INSERT INTO public.album (name_album, year_album) VALUES('Live at Rome Olympic Stadium', 2018);
 
 --blink-182 панк
 INSERT INTO public.album (name_album, year_album) VALUES('Dogs Eating Dogs', 2012);
@@ -84,6 +84,7 @@ INSERT INTO public.track (name_track, duration, id_album) VALUES('The Muse', 567
 INSERT INTO public.track (name_track, duration, id_album) VALUES('Alice my', 2345, 7);
 INSERT INTO public.track (name_track, duration, id_album) VALUES('One МОЙ', 6536, 3);
 INSERT INTO public.track (name_track, duration, id_album) VALUES('Along', 5436, 6);
+INSERT INTO public.track (name_track, duration, id_album) VALUES('I am not in collect', 2342, 3);
  
  -- треки в сборниках
 INSERT INTO public.track_collect (id_track, id_collect) VALUES(1, 1);
@@ -119,6 +120,9 @@ INSERT INTO public.singer_genre (id_singer, id_genre) VALUES(9, 4);
 INSERT INTO public.singer_genre (id_singer, id_genre) VALUES(10, 5);
 INSERT INTO public.singer_genre (id_singer, id_genre) VALUES(11, 5);
 INSERT INTO public.singer_genre (id_singer, id_genre) VALUES(12, 4);
+INSERT INTO public.singer_genre (id_singer, id_genre) VALUES(2, 4);
+INSERT INTO public.singer_genre (id_singer, id_genre) VALUES(2, 5);
+INSERT INTO public.singer_genre (id_singer, id_genre) VALUES(3, 3);
 
 --исполнители в альбомах
 INSERT INTO public.singer_album (id_singer, id_album) VALUES(1, 1);
