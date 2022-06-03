@@ -13,7 +13,7 @@ SELECT name_track, duration FROM public.track  WHERE duration >= 210; -- 3,5 м�
 SELECT  name_collect, year_collect FROM public.collect  WHERE year_collect BETWEEN 2018 AND 2020;
 
 --исполнители, чье имя состоит из 1 слова
-SELECT id_singer, name_singer, surname, alias FROM public.singer where alias not like '% %';
+SELECT id_singer, name_singer, surname, alias FROM public.singer where trim(alias) not like '% %';
 
 --название треков, которые содержат слово "мой"/"my".
 SELECT id_track, name_track, duration, id_album FROM public.track  where upper(name_track) like '%MY%' or upper(name_track) like '%МОЙ%';
